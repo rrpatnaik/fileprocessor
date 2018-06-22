@@ -36,6 +36,20 @@ docker run -i -t -p 8080:8080 fileprocessor
 ```
 3. The serivice is now available in `http://localhost:8080`
 4. To check you can run this in the browser `http://localhost:8080/deranz/getTime`, you should get the current date and time
+## Steps to host it to Heroku
+1. Push the image to heroku registry
+    ```sh
+    heroku container:push web --recursive
+    ```
+2. Release the image for hosting
+    ```sh
+    heroku container:release web
+    ```
+3. Access the heroku app
+    ```sh
+    heroku open
+    ```
+4. As of now the above app is hosted here - [GetTime](https://protected-eyrie-78250.herokuapp.com/deranz/getTime)
 
 License
 ----
