@@ -1,7 +1,8 @@
 FROM maven:3.3-jdk-8
-EXPOSE 8080
 COPY . /app
 WORKDIR /app/
+RUN useradd -m myuser
+USER myuser
 RUN mvn package spring-boot:repackage
 CMD java -Dserver.port=$PORT -jar target/loc-time-0.0.1-SNAPSHOT.jar
 
